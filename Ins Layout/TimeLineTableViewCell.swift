@@ -10,8 +10,11 @@ import UIKit
 
 class TimeLineTableViewCell: UITableViewCell {
     
-      @IBOutlet weak var mylabel: UILabel!
-
+      @IBOutlet weak var id: UILabel!
+    @IBOutlet weak var avatar: UIImageView!
+    @IBOutlet weak var photo: UIImageView!
+    @IBOutlet weak var timelineID: UILabel!
+    @IBOutlet weak var post: UITextView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

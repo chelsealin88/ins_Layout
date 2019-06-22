@@ -13,8 +13,8 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var tableView: UITableView!
     
     var stories = [Story]()
-  
-    var datas = ["1", "2"]
+    var timelines = [TimeLine]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch (section) {
         case 0: return 1
-        case 1: return datas.count
+        case 1: return 3
         default:
             return 0
         }
@@ -41,8 +41,11 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         
         if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "timelineCell", for: indexPath) as! TimeLineTableViewCell
-            let data = datas[indexPath.row]
-            cell.mylabel.text = data
+//            let timeline = timelines[indexPath.row]
+//            cell.id.text = "123"
+//            cell.timelineID.text = "123"
+//            cell.photo.image = UIImage(named: "a")
+            cell.photo.backgroundColor = .red
             return cell
             
         } else {
@@ -53,7 +56,12 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        
+        if indexPath.section == 0 {
+            return 100
+        } else {
+            return 500
+        }
     }
 
     func registerNib(nibname: String) {
