@@ -8,26 +8,50 @@
 
 import UIKit
 
+
+protocol TimeLineTableViewCellDelegate {
+    func passTitle()
+}
+
+
 class TimeLineTableViewCell: UITableViewCell {
     
     
-    @IBOutlet weak var avatar: UIImageView!
-    @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var idLebel: UILabel!
+    
     @IBOutlet weak var timelineidLabel: UILabel!
     @IBOutlet weak var postTextView: UITextView!
+    @IBOutlet weak var postImage: UIImageView!
+    @IBOutlet weak var avatar: UIImageView! {
+        didSet {
+            avatar.clipsToBounds = true
+            avatar.contentMode = .scaleAspectFill
+        }
+    }
     
+    var delegate : TimeLineTableViewCellDelegate?
+
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(passTitle))
+        idLebel.isUserInteractionEnabled = true
+        idLebel.addGestureRecognizer(tap)
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        super.setSelected(false, animated: false)
 
         // Configure the view for the selected state
     }
-    
-    // todo: label tap 
+
+    // todo: label tap
+
+    @objc func passTitle(sender: UITapGestureRecognizer) {
+//        print("Tapped")
+        delegate?.passTitle()
+    }
     
 }

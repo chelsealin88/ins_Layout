@@ -19,6 +19,8 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         stories = GetData.getStory()
+        timelines = GetData.getTimeline()
+        
         
         UIApplication.shared.statusBarView?.backgroundColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
 
@@ -34,7 +36,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch (section) {
         case 0: return 1
-        case 1: return 3
+        case 1: return timelines.count
         default:
             return 0
         }
@@ -45,6 +47,14 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         
         if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "timelinecell", for: indexPath) as! TimeLineTableViewCell
+            let timeline = timelines[indexPath.row]
+            cell.avatar.image = timeline.avatar
+            cell.avatar.layer.cornerRadius = cell.avatar.frame.height / 2
+            cell.idLebel.text = timeline.id
+            cell.timelineidLabel.text = timeline.id
+            cell.postImage.image = timeline.photo
+            cell.postTextView.text = timeline.post
+            cell.delegate = self
             return cell
             
         } else {
@@ -105,3 +115,11 @@ extension UIApplication {
     }
 }
 
+
+extension TimelineViewController : TimeLineTableViewCellDelegate {
+    
+    func passTitle() {
+        print("tapped!!!!")
+    }
+    
+}

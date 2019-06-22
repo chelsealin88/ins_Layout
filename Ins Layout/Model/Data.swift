@@ -9,13 +9,6 @@
 import Foundation
 
 
-class Data {
-    
-    static var stories = [Story]()
-    
-}
-
-
 class GetData {
     
     static func getStory() -> [Story] {
@@ -36,12 +29,18 @@ class GetData {
         storyDatas.append(story4)
         storyDatas.append(story5)
         storyDatas.append(story6)
-
-
-        
-        
         
         return storyDatas
+    }
+    
+    static func getTimeline() -> [TimeLine] {
+        
+        var timelines : [TimeLine] = []
+        
+        let post1 = TimeLine(id: "Testing", avatarName: "a", post: "Lorem ipsum dolor sit amet, viderer recusabo mediocrem in eum, dicunt possim mollis ad has. In mel nostrud saperet, ei.", photoName: "b")
+        timelines.append(post1)
+        
+        return timelines
     }
     
     
