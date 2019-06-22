@@ -10,18 +10,17 @@ import UIKit
 
 class TimelineViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
   
-    
-
     @IBOutlet weak var tableView: UITableView!
-  
     
+    var stories = [Story]()
+  
     var datas = ["1", "2"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        stories = GetData.getStory()
+        
     }
-    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -57,6 +56,11 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         return 100
     }
 
+    func registerNib(nibname: String) {
+        let nib = UINib(nibName: nibname, bundle: .main)
+        self.tableView.register(nib, forCellReuseIdentifier: nibname)
+    }
+    
 }
 
 
@@ -68,12 +72,14 @@ extension TimelineViewController : UICollectionViewDataSource, UICollectionViewD
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return stories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "storyCollectionCell", for: indexPath) as! StoryCollectionViewCell
-        cell.backgroundColor = .red
+        let story = stories[indexPath.row]
+        cell.idLabel.text = story.id
+        cell.avatavImage.image = story.avatar
         
         return cell
     }
