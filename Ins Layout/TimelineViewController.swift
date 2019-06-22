@@ -20,6 +20,10 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         stories = GetData.getStory()
         
+        UIApplication.shared.statusBarView?.backgroundColor = UIColor(red: 250/255, green: 250/255, blue: 250/255, alpha: 1)
+
+        registerNib(nibname: "timelinecell")
+        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -40,12 +44,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     
         
         if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "timelineCell", for: indexPath) as! TimeLineTableViewCell
-//            let timeline = timelines[indexPath.row]
-//            cell.id.text = "123"
-//            cell.timelineID.text = "123"
-//            cell.photo.image = UIImage(named: "a")
-            cell.photo.backgroundColor = .red
+            let cell = tableView.dequeueReusableCell(withIdentifier: "timelinecell", for: indexPath) as! TimeLineTableViewCell
             return cell
             
         } else {
@@ -58,9 +57,9 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if indexPath.section == 0 {
-            return 100
+            return 120
         } else {
-            return 500
+            return 600
         }
     }
 
@@ -68,6 +67,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         let nib = UINib(nibName: nibname, bundle: .main)
         self.tableView.register(nib, forCellReuseIdentifier: nibname)
     }
+    
     
 }
 
@@ -94,3 +94,14 @@ extension TimelineViewController : UICollectionViewDataSource, UICollectionViewD
     
     
 }
+
+
+extension UIApplication {
+    var statusBarView: UIView? {
+        if responds(to: Selector("statusBar")) {
+            return value(forKey: "statusBar") as? UIView
+        }
+        return nil
+    }
+}
+

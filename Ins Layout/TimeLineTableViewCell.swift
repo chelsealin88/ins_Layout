@@ -10,11 +10,13 @@ import UIKit
 
 class TimeLineTableViewCell: UITableViewCell {
     
-      @IBOutlet weak var id: UILabel!
+    
     @IBOutlet weak var avatar: UIImageView!
-    @IBOutlet weak var photo: UIImageView!
-    @IBOutlet weak var timelineID: UILabel!
-    @IBOutlet weak var post: UITextView!
+    @IBOutlet weak var postImage: UIImageView!
+    @IBOutlet weak var idLebel: UILabel!
+    @IBOutlet weak var timelineidLabel: UILabel!
+    @IBOutlet weak var postTextView: UITextView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,5 +27,7 @@ class TimeLineTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    // todo: label tap 
     
 }
