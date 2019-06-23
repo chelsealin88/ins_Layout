@@ -19,6 +19,7 @@
 		5E2BA07822BCE22B0082C219 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BA07722BCE22B0082C219 /* Story.swift */; };
 		5E2BA07E22BDCAA30082C219 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BA07D22BDCAA30082C219 /* Data.swift */; };
 		5E2BA08022BDD4E80082C219 /* TimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BA07F22BDD4E80082C219 /* TimeLine.swift */; };
+		5E2BA08422BF21380082C219 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BA08322BF21380082C219 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		5E2BA07722BCE22B0082C219 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		5E2BA07D22BDCAA30082C219 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		5E2BA07F22BDD4E80082C219 /* TimeLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLine.swift; sourceTree = "<group>"; };
+		5E2BA08322BF21380082C219 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileViewController.swift; path = ../ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				5E2BA05822BCCB790082C219 /* TimelineViewController.swift */,
+				5E2BA08322BF21380082C219 /* ProfileViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				5E2BA07522BCD15E0082C219 /* StoryCollectionViewCell.swift in Sources */,
 				5E2BA07122BCCE480082C219 /* TimeLineTableViewCell.swift in Sources */,
 				5E2BA05922BCCB790082C219 /* TimelineViewController.swift in Sources */,
+				5E2BA08422BF21380082C219 /* ProfileViewController.swift in Sources */,
 				5E2BA05722BCCB790082C219 /* AppDelegate.swift in Sources */,
 				5E2BA06D22BCCD3A0082C219 /* StoryTableViewCell.swift in Sources */,
 			);

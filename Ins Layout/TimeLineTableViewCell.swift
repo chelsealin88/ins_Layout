@@ -18,7 +18,6 @@ class TimeLineTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var idLebel: UILabel!
-    
     @IBOutlet weak var timelineidLabel: UILabel!
     @IBOutlet weak var postTextView: UITextView!
     @IBOutlet weak var postImage: UIImageView!
@@ -48,10 +47,16 @@ class TimeLineTableViewCell: UITableViewCell {
     }
 
     // todo: label tap
-
     @objc func passTitle(sender: UITapGestureRecognizer) {
-//        print("Tapped")
         delegate?.passTitle()
+    }
+    
+    func updateCell(_ timeline: TimeLine) {
+        timelineidLabel.text = timeline.id
+        idLebel.text = timeline.id
+        postImage.image = timeline.photo
+        avatar.image = timeline.avatar
+        postTextView.text = timeline.post
     }
     
 }
