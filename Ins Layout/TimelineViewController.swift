@@ -15,11 +15,10 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     var stories = [Story]()
     var timelines = [TimeLine]()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        GetAllData()
+        getAllData()
         
         let navigationBar = navigationController?.navigationBar
         navigationBar?.tintColor = .black
@@ -52,11 +51,13 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
             let timeline = timelines[indexPath.row]
             cell.avatar.layer.cornerRadius = cell.avatar.frame.height / 2
             cell.updateCell(timeline)
+            
             cell.delegate = self
+            
             return cell
             
         } else {
-            
+        
             let storyCell = tableView.dequeueReusableCell(withIdentifier: "storyCell", for: indexPath) as! StoryTableViewCell
             return storyCell
         }
@@ -76,7 +77,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         self.tableView.register(nib, forCellReuseIdentifier: nibname)
     }
     
-    func GetAllData () {
+    func getAllData () {
         stories = GetData.getStory()
         timelines = GetData.getTimeline()
     }
@@ -97,9 +98,7 @@ extension TimelineViewController : UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "storyCollectionCell", for: indexPath) as! StoryCollectionViewCell
         let story = stories[indexPath.row]
-        cell.idLabel.text = story.id
-        cell.avatavImage.image = story.avatar
-        
+        cell.updateCell(story)        
         return cell
     }
     
@@ -116,13 +115,11 @@ extension UIApplication {
     }
 }
 
-
 extension TimelineViewController : TimeLineTableViewCellDelegate {
     
     func passTitle() {
         // todo: pass title
         let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-//        vc.navigationTitle =
         self.navigationController?.pushViewController(vc, animated: true)
         
         

@@ -23,8 +23,12 @@ class StoryCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
     }
     
+    func updateCell(_ story: Story) {
+    idLabel.text = story.id
+    avatavImage.image = story.avatar
+        
+    }
    
 }
