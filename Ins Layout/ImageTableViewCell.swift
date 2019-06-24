@@ -1,5 +1,5 @@
 //
-//  HeighlightTableViewCell.swift
+//  ImageTableViewCell.swift
 //  Ins Layout
 //
 //  Created by Chelsea Lin on 2019/6/24.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HeighlightTableViewCell: UITableViewCell {
+class ImageTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

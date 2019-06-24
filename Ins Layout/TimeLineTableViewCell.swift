@@ -30,13 +30,13 @@ class TimeLineTableViewCell: UITableViewCell {
     
     var delegate : TimeLineTableViewCellDelegate?
 
-
     override func awakeFromNib() {
         super.awakeFromNib()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(passTitle))
-        idLebel.isUserInteractionEnabled = true
-        idLebel.addGestureRecognizer(tap)
+     
+        idLebel?.isUserInteractionEnabled = true
+        idLebel?.addGestureRecognizer(tap)
         
     }
 

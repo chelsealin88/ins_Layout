@@ -11,6 +11,13 @@ import UIKit
 class StoryCollectionViewCell: UICollectionViewCell {
     
     
+    @IBOutlet weak var heighlightImage: UIImageView! {
+        didSet {
+            heighlightImage.clipsToBounds = true
+            heighlightImage.contentMode = .scaleAspectFill
+        }
+    }
+    @IBOutlet weak var heighlightText: UILabel!
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var avatavImage: UIImageView! {
         didSet {
@@ -26,9 +33,11 @@ class StoryCollectionViewCell: UICollectionViewCell {
     }
     
     func updateCell(_ story: Story) {
-    idLabel.text = story.id
-    avatavImage.image = story.avatar
+        idLabel?.text = story.id
+        avatavImage?.image = story.avatar
+        heighlightText?.text = story.id
+        heighlightImage?.image = story.avatar
         
     }
-   
+    
 }

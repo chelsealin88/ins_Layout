@@ -9,38 +9,65 @@
 import UIKit
 
 class ProfileTableViewController: UITableViewController {
-
+    
+    
+    var stories = [Story]()
+    var timeLines = [TimeLine]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        getAllData()
+        
+        registerNib(nibname: "timelinecell")
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        if section == 3 {
+            return timeLines.count
+        } else {
+            return 1
+        }
     }
-
-    /*
+    
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+    
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "bannerCell", for: indexPath) as! ImageTableViewCell
+            return cell
 
-        // Configure the cell...
-
-        return cell
+        }; if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "storyCollectionCell", for: indexPath) as! StoryTableViewCell
+            return cell
+        }; if indexPath.section == 2 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "buttonCell", for: indexPath) as! ButtonTableViewCell
+            return cell
+            
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "timelineCell", for: indexPath) as! TimeLineTableViewCell
+            return cell
+        }
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 250
+        } else if indexPath.section == 1 {
+            return 150
+        }
+        return 100
+    }
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -86,5 +113,38 @@ class ProfileTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func registerNib(nibname: String) {
+        let nib = UINib(nibName: nibname, bundle: .main)
+        self.tableView.register(nib, forCellReuseIdentifier: nibname)
+    }
+    
+    func getAllData() {
+        stories = GetData.getStory()
+        timeLines = GetData.getTimeline()
+    }
 
+
+}
+
+extension ProfileTableViewController : UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return stories.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "storyCollectionCell", for: indexPath) as! StoryCollectionViewCell
+        let story = stories[indexPath.row]
+        cell.heighlightImage.layer.cornerRadius = cell.heighlightImage.bounds.height / 2
+        cell.updateCell(story)
+        return cell
+    }
+    
+    
 }

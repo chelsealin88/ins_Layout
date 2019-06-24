@@ -53,7 +53,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FyU-s0-5TS">
-                        <rect key="frame" x="19" y="416" width="80" height="20.5"/>
+                        <rect key="frame" x="10" y="416" width="80" height="20.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="C6v-J8-XbP"/>
                         </constraints>
@@ -62,7 +62,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQa-kv-noV">
-                        <rect key="frame" x="109" y="416" width="295" height="145.5"/>
+                        <rect key="frame" x="100" y="416" width="304" height="145.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -77,7 +77,7 @@
                     <constraint firstItem="PKe-Gq-wg9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="LDD-ir-o01"/>
                     <constraint firstItem="LQa-kv-noV" firstAttribute="top" secondItem="ErX-Jo-WGH" secondAttribute="bottom" constant="5" id="Q1A-u1-gDG"/>
                     <constraint firstItem="ErX-Jo-WGH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="RA3-eA-upY"/>
-                    <constraint firstItem="FyU-s0-5TS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="19" id="Ucr-5f-2ke"/>
+                    <constraint firstItem="FyU-s0-5TS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Ucr-5f-2ke"/>
                     <constraint firstAttribute="trailing" secondItem="5n1-tO-6YZ" secondAttribute="trailing" id="Vtd-tc-HzC"/>
                     <constraint firstAttribute="bottom" secondItem="LQa-kv-noV" secondAttribute="bottom" constant="10" id="jdy-i9-llO"/>
                     <constraint firstItem="5n1-tO-6YZ" firstAttribute="top" secondItem="PKe-Gq-wg9" secondAttribute="bottom" constant="10" id="lea-X8-rUD"/>
@@ -92,7 +92,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="avatar" destination="XQJ-t8-bJa" id="9rh-U4-OBx"/>
-                <outlet property="idLebel" destination="XGy-pg-bcX" id="sgB-Eu-dy7"/>
+                <outlet property="idLebel" destination="XGy-pg-bcX" id="6pD-8b-Ypp"/>
                 <outlet property="postImage" destination="5n1-tO-6YZ" id="Y1d-ZT-KhM"/>
                 <outlet property="postLabel" destination="LQa-kv-noV" id="RTB-i0-pLp"/>
                 <outlet property="timelineidLabel" destination="FyU-s0-5TS" id="ezl-SG-GUh"/>
