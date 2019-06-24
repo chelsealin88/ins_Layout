@@ -19,8 +19,8 @@ class TimeLineTableViewCell: UITableViewCell {
     
     @IBOutlet weak var idLebel: UILabel!
     @IBOutlet weak var timelineidLabel: UILabel!
-    @IBOutlet weak var postTextView: UITextView!
     @IBOutlet weak var postImage: UIImageView!
+    @IBOutlet weak var postLabel: UILabel!
     @IBOutlet weak var avatar: UIImageView! {
         didSet {
             avatar.clipsToBounds = true
@@ -56,7 +56,7 @@ class TimeLineTableViewCell: UITableViewCell {
         idLebel.text = timeline.id
         postImage.image = timeline.photo
         avatar.image = timeline.avatar
-        postTextView.text = timeline.post
+        postLabel.text = timeline.post
     }
     
 }

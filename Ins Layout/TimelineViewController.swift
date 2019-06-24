@@ -68,7 +68,7 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         if indexPath.section == 0 {
             return 120
         } else {
-            return 600
+            return UITableView.automaticDimension
         }
     }
 
@@ -119,7 +119,7 @@ extension TimelineViewController : TimeLineTableViewCellDelegate {
     
     func passTitle() {
         // todo: pass title
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileTableViewController
         self.navigationController?.pushViewController(vc, animated: true)
         
         
