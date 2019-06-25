@@ -27,6 +27,7 @@
 		5E61B6AC22C2027C003925B1 /* SimpleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E61B6AA22C2027C003925B1 /* SimpleCell.xib */; };
 		5E61B6AF22C20286003925B1 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61B6AD22C20286003925B1 /* DetailCell.swift */; };
 		5E61B6B022C20286003925B1 /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E61B6AE22C20286003925B1 /* DetailCell.xib */; };
+		5E61B6B222C20D30003925B1 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61B6B122C20D30003925B1 /* DetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		5E61B6AA22C2027C003925B1 /* SimpleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleCell.xib; sourceTree = "<group>"; };
 		5E61B6AD22C20286003925B1 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		5E61B6AE22C20286003925B1 /* DetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
+		5E61B6B122C20D30003925B1 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				5E2BA05822BCCB790082C219 /* TimelineViewController.swift */,
 				5E61B69D22C1D15D003925B1 /* ProfileCollectionViewController.swift */,
+				5E61B6B122C20D30003925B1 /* DetailTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				5E2BA07822BCE22B0082C219 /* Story.swift in Sources */,
 				5E2BA07522BCD15E0082C219 /* StoryCollectionViewCell.swift in Sources */,
 				5E2BA07122BCCE480082C219 /* TimeLineTableViewCell.swift in Sources */,
+				5E61B6B222C20D30003925B1 /* DetailTableViewController.swift in Sources */,
 				5E2BA05922BCCB790082C219 /* TimelineViewController.swift in Sources */,
 				5E61B6AF22C20286003925B1 /* DetailCell.swift in Sources */,
 				5E2BA05722BCCB790082C219 /* AppDelegate.swift in Sources */,

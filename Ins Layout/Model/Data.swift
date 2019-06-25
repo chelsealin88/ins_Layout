@@ -38,10 +38,20 @@ class GetData {
         var timelines : [TimeLine] = []
         
         let post1 = TimeLine(id: "Testing", avatarName: "a", post: "Lorem ipsum dolor sit amet, viderer recusabo mediocrem in eum, dicunt possim mollis ad has. In mel nostrud saperet, ei.", photoName: "b")
-        let post2 = TimeLine(id: "TestABC", avatarName: "c", post: "Lorem ipsum dolor sit amet, viderer recusabo mediocrem in eum, dicunt possim mollis ad has. In mel nostrud saperet, ei.Lorem ipsum dolor sit amet, viderer recusabo mediocrem in eum, dicunt possim mollis ad has. In mel nostrud saperet, ei.", photoName: "d")
+        let post2 = TimeLine(id: "TestABC", avatarName: "d", post: "Lorem ipsum dolor sit amet, viderer recusabo mediocrem in eum, dicunt possim mollis ad has. In mel nostrud saperet, ei.Lorem ipsum dolor sit amet, viderer recusabo mediocrem in eum, dicunt possim mollis ad has. In mel nostrud saperet, ei.", photoName: "e")
+        let post3 = TimeLine(id: "AAA111", avatarName: "f", post: "Lorem ipsum dolor sit amet, viderer recusabo mediocrem in eum, dicunt possim mollis ad has. In mel nostrud saperet, ei.Lorem", photoName: "g")
+        let post4 = TimeLine(id: "BBBCCC", avatarName: "h", post: "dicunt possim mollis ad has. In mel nostrud saperet, ei.Lorem", photoName: "i")
+        let post5 = TimeLine(id: "DD123", avatarName: "j", post: "mel nostrud saperet, ei.Loremmel nostrud saperet, ei.Loremmel nostrud saperet, ei.Lorem", photoName: "k")
+        let post6 = TimeLine(id: "Testxxx", avatarName: "l", post: "ad has. In mel nostrud saperet, ei.Lorem ipsum dolor sit amet, viderer recusabo mediocrem in eum, dicunt possim mollis ad has.", photoName: "m")
+        
+    
         
         timelines.append(post1)
         timelines.append(post2)
+        timelines.append(post3)
+        timelines.append(post4)
+        timelines.append(post5)
+        timelines.append(post6)
     
         
         return timelines

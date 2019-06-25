@@ -10,6 +10,10 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
+protocol ProfileCollectionViewControllerDelegate {
+    func passData(data: TimeLine)
+}
+
 class ProfileCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var stories = [Story]()
@@ -29,13 +33,14 @@ class ProfileCollectionViewController: UICollectionViewController, UICollectionV
     // MARK: UICollectionViewDataSource
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        print("numberOfSections return")
         return 4
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 3 {
+            return timelines.count
+        }
         return 1
     }
     
@@ -56,13 +61,26 @@ class ProfileCollectionViewController: UICollectionViewController, UICollectionV
             
         default:
             let simpleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "SimpleCell", for: indexPath) as! SimpleCell
-            simpleCell.backgroundColor = .red
+            let timeline = timelines[indexPath.row]
+            simpleCell.updateCell(timeline)
             return simpleCell
             
         }
         
         
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if indexPath.section == 3 {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailTableViewController") as! DetailTableViewController
+        let data = timelines[indexPath.row]
+        vc.data = data
+        navigationController?.pushViewController(vc, animated: true)
+        
+        }
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellSize = (UIScreen.main.bounds.width / 3 ) - 1
@@ -84,12 +102,6 @@ class ProfileCollectionViewController: UICollectionViewController, UICollectionV
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1
     }
-    
-    
-    
-    
-    
-    
     
     func registerNib(nibname: String) {
         let nib = UINib(nibName: nibname, bundle: .main)
