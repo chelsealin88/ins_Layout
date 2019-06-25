@@ -14,27 +14,32 @@ class ProfileTableViewController: UITableViewController {
     var stories = [Story]()
     var timeLines = [TimeLine]()
     
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
         getAllData()
         
-        registerNib(nibname: "timelinecell")
+//        registerNib(nibname: "timelinecell")
+//        registerNib(nibname: "simpleCell")
 
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
+//        return 4
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 3 {
-            return timeLines.count
-        } else {
-            return 1
-        }
+    
+//        if section == 3 {
+//            return timeLines.count
+//        } else {
+//            return 1
+//        }
+        return 1
     }
     
     
@@ -47,7 +52,7 @@ class ProfileTableViewController: UITableViewController {
             return cell
 
         }; if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "storyCollectionCell", for: indexPath) as! StoryTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "heighligtCell", for: indexPath) as! StoryTableViewCell
             return cell
         }; if indexPath.section == 2 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "buttonCell", for: indexPath) as! ButtonTableViewCell
@@ -55,6 +60,8 @@ class ProfileTableViewController: UITableViewController {
             
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "timelineCell", for: indexPath) as! TimeLineTableViewCell
+            let timeline = timeLines[indexPath.row]
+            cell.updateCell(timeline)
             return cell
         }
     }
@@ -62,8 +69,10 @@ class ProfileTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
             return 250
-        } else if indexPath.section == 1 {
-            return 150
+        }; if indexPath.section == 1 {
+            return 140
+        } else if indexPath.section == 2 {
+            return 50
         }
         return 100
     }
@@ -139,7 +148,7 @@ extension ProfileTableViewController : UICollectionViewDataSource, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "storyCollectionCell", for: indexPath) as! StoryCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "heighligtCollectionCell", for: indexPath) as! StoryCollectionViewCell
         let story = stories[indexPath.row]
         cell.heighlightImage.layer.cornerRadius = cell.heighlightImage.bounds.height / 2
         cell.updateCell(story)

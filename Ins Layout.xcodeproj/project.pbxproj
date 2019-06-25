@@ -24,6 +24,7 @@
 		5E3390E522C0A32600A1D4A7 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3390E422C0A32600A1D4A7 /* ProfileTableViewController.swift */; };
 		5EB97A7322C0C47000921FF5 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB97A7222C0C47000921FF5 /* ButtonTableViewCell.swift */; };
 		5EB97A7522C0C80900921FF5 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB97A7422C0C80900921FF5 /* ImageTableViewCell.swift */; };
+		5EB97A7722C0DAEA00921FF5 /* SimpleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EB97A7622C0DAEA00921FF5 /* SimpleCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		5E3390E422C0A32600A1D4A7 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		5EB97A7222C0C47000921FF5 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		5EB97A7422C0C80900921FF5 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		5EB97A7622C0DAEA00921FF5 /* SimpleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,11 +107,12 @@
 				5E2BA06F22BCCE480082C219 /* TimeLineTableViewCell.swift */,
 				5E2BA07022BCCE480082C219 /* timelinecell.xib */,
 				5E2BA07322BCD15E0082C219 /* StoryCollectionViewCell.swift */,
-				5E2BA06B22BCCD3A0082C219 /* StoryTableViewCell.swift */,
 				5E3390D122C060C600A1D4A7 /* InsCollectionViewCell.swift */,
+				5E2BA06B22BCCD3A0082C219 /* StoryTableViewCell.swift */,
 				5E3390D922C0721A00A1D4A7 /* InsDetailCollectionViewCell.swift */,
 				5EB97A7222C0C47000921FF5 /* ButtonTableViewCell.swift */,
 				5EB97A7422C0C80900921FF5 /* ImageTableViewCell.swift */,
+				5EB97A7622C0DAEA00921FF5 /* SimpleCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			files = (
 				5E2BA07222BCCE480082C219 /* timelinecell.xib in Resources */,
 				5E2BA06122BCCB7A0082C219 /* LaunchScreen.storyboard in Resources */,
+				5EB97A7722C0DAEA00921FF5 /* SimpleCell.xib in Resources */,
 				5E2BA05E22BCCB7A0082C219 /* Assets.xcassets in Resources */,
 				5E2BA05C22BCCB790082C219 /* Main.storyboard in Resources */,
 			);

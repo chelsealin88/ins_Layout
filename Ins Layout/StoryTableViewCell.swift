@@ -9,10 +9,13 @@
 import UIKit
 
 class StoryTableViewCell: UITableViewCell {
-
+    
+    let stories = [Story]()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+//        collectionView.dataSource = self
+//        collectionView.delegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

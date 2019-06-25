@@ -17,6 +17,7 @@ protocol TimeLineTableViewCellDelegate {
 class TimeLineTableViewCell: UITableViewCell {
     
     
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var idLebel: UILabel!
     @IBOutlet weak var timelineidLabel: UILabel!
     @IBOutlet weak var postImage: UIImageView!
@@ -52,11 +53,12 @@ class TimeLineTableViewCell: UITableViewCell {
     }
     
     func updateCell(_ timeline: TimeLine) {
-        timelineidLabel.text = timeline.id
-        idLebel.text = timeline.id
-        postImage.image = timeline.photo
-        avatar.image = timeline.avatar
-        postLabel.text = timeline.post
+        
+        timelineidLabel?.text = timeline.id
+        idLebel?.text = timeline.id
+        postImage?.image = timeline.photo
+        avatar?.image = timeline.avatar
+        postLabel?.text = timeline.post
     }
     
 }

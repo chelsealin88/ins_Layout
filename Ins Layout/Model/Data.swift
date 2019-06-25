@@ -38,7 +38,11 @@ class GetData {
         var timelines : [TimeLine] = []
         
         let post1 = TimeLine(id: "Testing", avatarName: "a", post: "Lorem ipsum dolor sit amet, viderer recusabo mediocrem in eum, dicunt possim mollis ad has. In mel nostrud saperet, ei.", photoName: "b")
+        let post2 = TimeLine(id: "TestABC", avatarName: "c", post: "Lorem ipsum dolor sit amet, viderer recusabo mediocrem in eum, dicunt possim mollis ad has. In mel nostrud saperet, ei.Lorem ipsum dolor sit amet, viderer recusabo mediocrem in eum, dicunt possim mollis ad has. In mel nostrud saperet, ei.", photoName: "d")
+        
         timelines.append(post1)
+        timelines.append(post2)
+    
         
         return timelines
     }
