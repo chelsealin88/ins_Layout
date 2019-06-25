@@ -21,6 +21,8 @@ class ProfileCollectionViewController: UICollectionViewController, UICollectionV
     var timelines = [TimeLine]()
     var celltype = InsCellType.simple
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,7 +67,7 @@ class ProfileCollectionViewController: UICollectionViewController, UICollectionV
             return buttonCell
             
         default:
-            
+            let timeline = timelines[indexPath.row]
             guard let inscellType = InsCellType(rawValue: celltype.rawValue) else { return UICollectionViewCell()}
             switch inscellType {
             case .simple:
@@ -75,7 +77,8 @@ class ProfileCollectionViewController: UICollectionViewController, UICollectionV
                 return simpleCell
             default:
                 guard let detailCell = cell as? DetailCell else { return UICollectionViewCell()}
-                detailCell.backgroundColor = .red
+                detailCell.avatar.layer.cornerRadius = detailCell.avatar.frame.height / 2
+                detailCell.updateCell(timeline)
                 return detailCell
                 
             }
@@ -120,8 +123,7 @@ class ProfileCollectionViewController: UICollectionViewController, UICollectionV
             if celltype == .simple {
                 return CGSize(width: cellSize, height: cellSize)
             } else {
-                
-                return CGSize(width: collectionView.bounds.width, height: 500)
+              return CGSize(width: collectionView.bounds.width, height: 500.0)
             }
             
         }

@@ -97,7 +97,7 @@
                 <outlet property="postLabel" destination="LQa-kv-noV" id="RTB-i0-pLp"/>
                 <outlet property="timelineidLabel" destination="FyU-s0-5TS" id="ezl-SG-GUh"/>
             </connections>
-            <point key="canvasLocation" x="107.24637681159422" y="141.29464285714286"/>
+            <point key="canvasLocation" x="12" y="133"/>
         </tableViewCell>
     </objects>
 </document>
