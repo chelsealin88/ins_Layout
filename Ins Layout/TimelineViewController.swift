@@ -119,7 +119,9 @@ extension TimelineViewController : TimeLineTableViewCellDelegate {
     
     func passTitle() {
         // todo: pass title
-        let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileTableViewController") as! ProfileTableViewController
+        let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileCollectionViewController") as! ProfileCollectionViewController
+        vc.stories = self.stories
+        vc.timelines = self.timelines
         self.navigationController?.pushViewController(vc, animated: true)
         
         

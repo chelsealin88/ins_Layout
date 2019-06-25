@@ -10,12 +10,9 @@ import UIKit
 
 class StoryTableViewCell: UITableViewCell {
     
-    let stories = [Story]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        collectionView.dataSource = self
-//        collectionView.delegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
