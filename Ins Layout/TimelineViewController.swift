@@ -117,8 +117,7 @@ extension UIApplication {
 
 extension TimelineViewController : TimeLineTableViewCellDelegate {
     
-    func passTitle() {
-        // todo: pass title
+    func passData() {
         let vc = storyboard?.instantiateViewController(withIdentifier: "ProfileCollectionViewController") as! ProfileCollectionViewController
         vc.stories = self.stories
         vc.timelines = self.timelines

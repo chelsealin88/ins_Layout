@@ -10,7 +10,7 @@ import UIKit
 
 
 protocol TimeLineTableViewCellDelegate {
-    func passTitle()
+    func passData()
 }
 
 
@@ -34,7 +34,7 @@ class TimeLineTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(passTitle))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(passData))
      
         idLebel?.isUserInteractionEnabled = true
         idLebel?.addGestureRecognizer(tap)
@@ -48,8 +48,8 @@ class TimeLineTableViewCell: UITableViewCell {
     }
 
     // todo: label tap
-    @objc func passTitle(sender: UITapGestureRecognizer) {
-        delegate?.passTitle()
+    @objc func passData(sender: UITapGestureRecognizer) {
+        delegate?.passData()
     }
     
     func updateCell(_ timeline: TimeLine) {

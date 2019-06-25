@@ -11,6 +11,7 @@ import UIKit
 
 class DetailTableViewController: UITableViewController {
     
+    
     var data: TimeLine?
     
     override func viewDidLoad() {

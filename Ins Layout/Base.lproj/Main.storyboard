@@ -229,6 +229,9 @@
                                                 <constraint firstAttribute="height" constant="30" id="TRC-XT-Dpq"/>
                                             </constraints>
                                             <state key="normal" title="Button" image="buttonB"/>
+                                            <connections>
+                                                <action selector="detailButton:" destination="VAj-2l-ggJ" eventType="touchUpInside" id="ics-gk-DAG"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKz-9o-1dH">
                                             <rect key="frame" x="48" y="19" width="30" height="30"/>
@@ -237,6 +240,9 @@
                                                 <constraint firstAttribute="width" constant="30" id="Nhm-4E-b2s"/>
                                             </constraints>
                                             <state key="normal" title="Button" image="buttonA"/>
+                                            <connections>
+                                                <action selector="simpleButton:" destination="VAj-2l-ggJ" eventType="touchUpInside" id="5q1-GM-XVs"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jbh-IW-myi">
                                             <rect key="frame" x="328" y="18" width="38" height="32"/>

@@ -8,6 +8,26 @@
 
 import UIKit
 
+protocol ButtonCellDelegate {
+    func toSimple()
+    func toDetail()
+}
+
+
 class ButtonCell: UICollectionViewCell {
+    
+    var delegate: ButtonCellDelegate?
+    
+    
+    @IBAction func simpleButton(_ sender: Any) {
+        
+        delegate?.toSimple() 
+    }
+    
+    @IBAction func detailButton(_ sender: Any) {
+        delegate?.toDetail()
+        
+    }
+    
     
 }

@@ -10,18 +10,22 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-protocol ProfileCollectionViewControllerDelegate {
-    func passData(data: TimeLine)
-}
-
-class ProfileCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class ProfileCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, ButtonCellDelegate {
+    
+    enum InsCellType: String {
+        case simple = "SimpleCell"
+        case detail = "DetailCell"
+    }
     
     var stories = [Story]()
     var timelines = [TimeLine]()
+    var celltype = InsCellType.simple
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        registerNib(nibname: "DetailCell")
         registerNib(nibname: "SimpleCell")
         
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
@@ -31,7 +35,6 @@ class ProfileCollectionViewController: UICollectionViewController, UICollectionV
     
     
     // MARK: UICollectionViewDataSource
-    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 4
     }
@@ -45,6 +48,7 @@ class ProfileCollectionViewController: UICollectionViewController, UICollectionV
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: celltype.rawValue, for: indexPath)
         
         switch indexPath.section {
         case 0:
@@ -52,44 +56,73 @@ class ProfileCollectionViewController: UICollectionViewController, UICollectionV
             return profileCell
         case 1:
             let storyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
-                storyCell.stories = self.stories
+            storyCell.stories = self.stories
             return storyCell
             
         case 2:
             let buttonCell = collectionView.dequeueReusableCell(withReuseIdentifier: "buttonCell", for: indexPath) as! ButtonCell
+            buttonCell.delegate = self
             return buttonCell
             
         default:
-            let simpleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "SimpleCell", for: indexPath) as! SimpleCell
-            let timeline = timelines[indexPath.row]
-            simpleCell.updateCell(timeline)
-            return simpleCell
             
+            guard let inscellType = InsCellType(rawValue: celltype.rawValue) else { return UICollectionViewCell()}
+            switch inscellType {
+            case .simple:
+                guard let simpleCell = cell as? SimpleCell else { return UICollectionViewCell()}
+                let timeline = timelines[indexPath.row]
+                simpleCell.updateCell(timeline)
+                return simpleCell
+            default:
+                guard let detailCell = cell as? DetailCell else { return UICollectionViewCell()}
+                detailCell.backgroundColor = .red
+                return detailCell
+                
+            }
         }
-        
         
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if indexPath.section == 3 {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "DetailTableViewController") as! DetailTableViewController
-        let data = timelines[indexPath.row]
-        vc.data = data
-        navigationController?.pushViewController(vc, animated: true)
-        
+            let vc = storyboard?.instantiateViewController(withIdentifier: "DetailTableViewController") as! DetailTableViewController
+            let data = timelines[indexPath.row]
+            vc.data = data
+            navigationController?.pushViewController(vc, animated: true)
+            
         }
+    }
+    
+    // change layout button
+    func toSimple() {
+        print("tap simple")
+        celltype = InsCellType.simple
+        self.collectionView.reloadData()
+    }
+    
+    func toDetail() {
+        print("tap detail")
+        celltype = InsCellType.detail
+        self.collectionView.reloadData()
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellSize = (UIScreen.main.bounds.width / 3 ) - 1
-
+        
         switch (indexPath.section) {
         case 0: return CGSize(width: collectionView.bounds.width, height: 150.0)
         case 1: return CGSize(width: collectionView.bounds.width, height: 130.0)
         case 2: return CGSize(width: collectionView.bounds.width, height: 50.0)
-        default: return CGSize(width: cellSize, height: cellSize)
+        default:
+            
+            if celltype == .simple {
+                return CGSize(width: cellSize, height: cellSize)
+            } else {
+                
+                return CGSize(width: collectionView.bounds.width, height: 500)
+            }
             
         }
         
@@ -107,4 +140,6 @@ class ProfileCollectionViewController: UICollectionViewController, UICollectionV
         let nib = UINib(nibName: nibname, bundle: .main)
         self.collectionView.register(nib, forCellWithReuseIdentifier: nibname)
     }
+    
+    
 }
