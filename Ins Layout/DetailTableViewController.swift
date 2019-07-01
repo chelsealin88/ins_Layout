@@ -12,7 +12,8 @@ import UIKit
 class DetailTableViewController: UITableViewController {
     
     
-    var data: TimeLine?
+    var user: User?
+    var timeline: UserTimeline?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,8 @@ class DetailTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "timelinecell", for: indexPath) as! TimeLineTableViewCell
-        cell.updateCell(data!)
+        guard let timeline = timeline else { return UITableViewCell()}
+        cell.updateCell(timeline)
         cell.avatar.layer.cornerRadius = cell.avatar.frame.height / 2
         return cell
     }

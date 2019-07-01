@@ -12,16 +12,15 @@ import Foundation
 class GetData {
     
     static func getStory() -> [Story] {
-        
+
         var storyDatas : [Story] = []
         
-        
-        let story1 = Story(id: "Your story", avatarName: "a")
-        let story2 = Story(id: "testing", avatarName: "b")
-        let story3 = Story(id: "test2", avatarName: "c")
-        let story4 = Story(id: "test3", avatarName: "d")
-        let story5 = Story(id: "test4", avatarName: "e")
-        let story6 = Story(id: "test5", avatarName: "f")
+        let story1 = Story(id: "Your story", avatarName: "image-1")
+        let story2 = Story(id: "testing", avatarName: "image-2")
+        let story3 = Story(id: "test2", avatarName: "image-6")
+        let story4 = Story(id: "test3", avatarName: "image-3")
+        let story5 = Story(id: "test4", avatarName: "image-4")
+        let story6 = Story(id: "test5", avatarName: "image-5")
 
         storyDatas.append(story1)
         storyDatas.append(story2)
@@ -33,29 +32,37 @@ class GetData {
         return storyDatas
     }
     
-    static func getTimeline() -> [TimeLine] {
-        
-        var timelines : [TimeLine] = []
-        
-        let post1 = TimeLine(id: "Testing", avatarName: "a", post: "Lorem ipsum dolor sit amet, viderer recusabo mediocrem in eum, dicunt possim mollis ad has. In mel nostrud saperet, ei.", photoName: "b")
-        let post2 = TimeLine(id: "TestABC", avatarName: "d", post: "Lorem ipsum dolor sit amet, viderer recusabo mediocrem in eum, dicunt possim mollis ad has. In mel nostrud saperet, ei.Lorem ipsum dolor sit amet, viderer recusabo mediocrem in eum, dicunt possim mollis ad has. In mel nostrud saperet, ei.", photoName: "e")
-        let post3 = TimeLine(id: "AAA111", avatarName: "f", post: "Lorem ipsum dolor sit amet, viderer recusabo mediocrem in eum, dicunt possim mollis ad has. In mel nostrud saperet, ei.Lorem", photoName: "g")
-        let post4 = TimeLine(id: "BBBCCC", avatarName: "h", post: "dicunt possim mollis ad has. In mel nostrud saperet, ei.Lorem", photoName: "i")
-        let post5 = TimeLine(id: "DD123", avatarName: "j", post: "mel nostrud saperet, ei.Loremmel nostrud saperet, ei.Loremmel nostrud saperet, ei.Lorem", photoName: "k")
-        let post6 = TimeLine(id: "Testxxx", avatarName: "l", post: "ad has. In mel nostrud saperet, ei.Lorem ipsum dolor sit amet, viderer recusabo mediocrem in eum, dicunt possim mollis ad has.", photoName: "m")
-        
     
+    static func getUserData() -> [User]{
         
-        timelines.append(post1)
-        timelines.append(post2)
-        timelines.append(post3)
-        timelines.append(post4)
-        timelines.append(post5)
-        timelines.append(post6)
-    
+        var users : [User] = []
         
-        return timelines
+        let userid = ["TestA", "TestB", "TestC"]
+        
+        let describe = ["hello world", "goooooooood"]
+        
+        let post = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet erat nisl. Maecenas in tempus elit.", "Donec pellentesque vel tellus non dapibus. Nulla convallis orci id mauris placerat sollicitudin. Vivamus luctus tempus metus ac convallis. ", "Donec hendrerit odio in eros cursus posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "Donec ac finibus metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur ac nisl et nunc pharetra faucibus eget non augue. Duis mollis malesuada mollis. "]
+        
+        for num in 1...15 {
+            let randomID = Int.random(in: userid.indices)
+            let randomPost = Int.random(in: post.indices)
+            let randomDescribe = Int.random(in: describe.indices)
+            let randonNumber = Int.random(in: 10...100)
+            
+            // fake timelines
+            var timelines = [UserTimeline]()
+            for num in 1...15 {
+                let timeline = UserTimeline(id: userid[randomID], avatarName: "image-\(num)", post: post[randomPost], photoName: "image-\(num)")
+                timelines.append(timeline)
+            }
+            
+            let user = User(avatar: "image-\(num)", id: userid[randomID], post: "\(randonNumber)k", followers: "\(randonNumber)M", following: "\(randonNumber)", descirbe: describe[randomDescribe], timeLine: timelines)
+            users.append(user)
+        }
+        return users
     }
+    
+    
     
     
 }

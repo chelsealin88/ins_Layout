@@ -15,9 +15,6 @@ protocol SimpleCellDelegate {
 class SimpleCell: UICollectionViewCell {
     
     
-    
-    var timelines = [TimeLine]()
-    
     @IBOutlet weak var image: UIImageView!
     
     override func awakeFromNib() {
@@ -25,8 +22,8 @@ class SimpleCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func updateCell(_ timeline: TimeLine) {
-        image.image = timeline.photo
+    func updateCell(_ image: UIImage) {
+        self.image.image = image
     }
     
     

@@ -8,7 +8,8 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+//todo : 把檔案拆開 寫extension
+//user資料重寫
 
 class ProfileCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, ButtonCellDelegate {
     
@@ -18,7 +19,7 @@ class ProfileCollectionViewController: UICollectionViewController, UICollectionV
     }
     
     var stories = [Story]()
-    var timelines = [TimeLine]()
+    var user : User?
     var celltype = InsCellType.simple
     
     
@@ -26,13 +27,10 @@ class ProfileCollectionViewController: UICollectionViewController, UICollectionV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         registerNib(nibname: "DetailCell")
         registerNib(nibname: "SimpleCell")
-        
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        print(stories)
-        print(timelines)
+        registerNib(nibname: "ProfileCell")
+
     }
     
     
@@ -44,17 +42,19 @@ class ProfileCollectionViewController: UICollectionViewController, UICollectionV
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 3 {
-            return timelines.count
+            return user?.timeLine.count ?? 0
         }
         return 1
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let user = user else { return UICollectionViewCell() }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: celltype.rawValue, for: indexPath)
-        
+        // todo: enum 寫seciton
         switch indexPath.section {
         case 0:
             let profileCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileCell", for: indexPath) as! ProfileCell
+            profileCell.updateCell(user)
             return profileCell
         case 1:
             let storyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
@@ -67,18 +67,17 @@ class ProfileCollectionViewController: UICollectionViewController, UICollectionV
             return buttonCell
             
         default:
-            let timeline = timelines[indexPath.row]
             guard let inscellType = InsCellType(rawValue: celltype.rawValue) else { return UICollectionViewCell()}
             switch inscellType {
             case .simple:
                 guard let simpleCell = cell as? SimpleCell else { return UICollectionViewCell()}
-                let timeline = timelines[indexPath.row]
-                simpleCell.updateCell(timeline)
+                // todo : UIImage optional
+                simpleCell.updateCell(user.timeLine[indexPath.row].photo!)
                 return simpleCell
             default:
                 guard let detailCell = cell as? DetailCell else { return UICollectionViewCell()}
                 detailCell.avatar.layer.cornerRadius = detailCell.avatar.frame.height / 2
-                detailCell.updateCell(timeline)
+                detailCell.updateCell(user.timeLine[indexPath.row])
                 return detailCell
                 
             }
@@ -90,8 +89,10 @@ class ProfileCollectionViewController: UICollectionViewController, UICollectionV
         
         if indexPath.section == 3 {
             let vc = storyboard?.instantiateViewController(withIdentifier: "DetailTableViewController") as! DetailTableViewController
-            let data = timelines[indexPath.row]
-            vc.data = data
+            let timeline = user?.timeLine[indexPath.row]
+            vc.timeline = timeline
+//            let data = timelines[indexPath.row]
+//            vc.timeline = data
             navigationController?.pushViewController(vc, animated: true)
             
         }

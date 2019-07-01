@@ -20,7 +20,6 @@
 		5E2BA07E22BDCAA30082C219 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BA07D22BDCAA30082C219 /* Data.swift */; };
 		5E2BA08022BDD4E80082C219 /* TimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BA07F22BDD4E80082C219 /* TimeLine.swift */; };
 		5E61B69E22C1D15D003925B1 /* ProfileCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61B69D22C1D15D003925B1 /* ProfileCollectionViewController.swift */; };
-		5E61B6A422C1D694003925B1 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61B6A322C1D694003925B1 /* ProfileCell.swift */; };
 		5E61B6A622C1F3BD003925B1 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61B6A522C1F3BD003925B1 /* CollectionViewCell.swift */; };
 		5E61B6A822C1F7D1003925B1 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61B6A722C1F7D1003925B1 /* ButtonCell.swift */; };
 		5E61B6AB22C2027C003925B1 /* SimpleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61B6A922C2027C003925B1 /* SimpleCell.swift */; };
@@ -28,6 +27,9 @@
 		5E61B6AF22C20286003925B1 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61B6AD22C20286003925B1 /* DetailCell.swift */; };
 		5E61B6B022C20286003925B1 /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E61B6AE22C20286003925B1 /* DetailCell.xib */; };
 		5E61B6B222C20D30003925B1 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E61B6B122C20D30003925B1 /* DetailTableViewController.swift */; };
+		5E88CA6B22C46B9600219AC0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E88CA6A22C46B9600219AC0 /* User.swift */; };
+		5E88CA6D22C5B9C900219AC0 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E88CA6C22C5B9C900219AC0 /* ProfileCell.swift */; };
+		5E88CA6F22C5BA1B00219AC0 /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E88CA6E22C5BA1B00219AC0 /* ProfileCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +48,6 @@
 		5E2BA07D22BDCAA30082C219 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		5E2BA07F22BDD4E80082C219 /* TimeLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLine.swift; sourceTree = "<group>"; };
 		5E61B69D22C1D15D003925B1 /* ProfileCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewController.swift; sourceTree = "<group>"; };
-		5E61B6A322C1D694003925B1 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		5E61B6A522C1F3BD003925B1 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		5E61B6A722C1F7D1003925B1 /* ButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		5E61B6A922C2027C003925B1 /* SimpleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCell.swift; sourceTree = "<group>"; };
@@ -54,6 +55,10 @@
 		5E61B6AD22C20286003925B1 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		5E61B6AE22C20286003925B1 /* DetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
 		5E61B6B122C20D30003925B1 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		5E88CA6922C4523B00219AC0 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		5E88CA6A22C46B9600219AC0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5E88CA6C22C5B9C900219AC0 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
+		5E88CA6E22C5BA1B00219AC0 /* ProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +75,7 @@
 		5E2BA04A22BCCB790082C219 = {
 			isa = PBXGroup;
 			children = (
+				5E88CA6922C4523B00219AC0 /* MyPlayground.playground */,
 				5E2BA05522BCCB790082C219 /* Ins Layout */,
 				5E2BA05422BCCB790082C219 /* Products */,
 			);
@@ -115,13 +121,14 @@
 				5E2BA07022BCCE480082C219 /* timelinecell.xib */,
 				5E2BA07322BCD15E0082C219 /* StoryCollectionViewCell.swift */,
 				5E2BA06B22BCCD3A0082C219 /* StoryTableViewCell.swift */,
-				5E61B6A322C1D694003925B1 /* ProfileCell.swift */,
 				5E61B6A522C1F3BD003925B1 /* CollectionViewCell.swift */,
 				5E61B6A722C1F7D1003925B1 /* ButtonCell.swift */,
 				5E61B6A922C2027C003925B1 /* SimpleCell.swift */,
 				5E61B6AA22C2027C003925B1 /* SimpleCell.xib */,
 				5E61B6AD22C20286003925B1 /* DetailCell.swift */,
 				5E61B6AE22C20286003925B1 /* DetailCell.xib */,
+				5E88CA6C22C5B9C900219AC0 /* ProfileCell.swift */,
+				5E88CA6E22C5BA1B00219AC0 /* ProfileCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -130,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				5E2BA07722BCE22B0082C219 /* Story.swift */,
+				5E88CA6A22C46B9600219AC0 /* User.swift */,
 				5E2BA07F22BDD4E80082C219 /* TimeLine.swift */,
 				5E2BA07D22BDCAA30082C219 /* Data.swift */,
 			);
@@ -197,6 +205,7 @@
 				5E2BA07222BCCE480082C219 /* timelinecell.xib in Resources */,
 				5E2BA06122BCCB7A0082C219 /* LaunchScreen.storyboard in Resources */,
 				5E61B6AC22C2027C003925B1 /* SimpleCell.xib in Resources */,
+				5E88CA6F22C5BA1B00219AC0 /* ProfileCell.xib in Resources */,
 				5E61B6B022C20286003925B1 /* DetailCell.xib in Resources */,
 				5E2BA05E22BCCB7A0082C219 /* Assets.xcassets in Resources */,
 				5E2BA05C22BCCB790082C219 /* Main.storyboard in Resources */,
@@ -214,6 +223,7 @@
 				5E61B69E22C1D15D003925B1 /* ProfileCollectionViewController.swift in Sources */,
 				5E2BA07E22BDCAA30082C219 /* Data.swift in Sources */,
 				5E2BA07822BCE22B0082C219 /* Story.swift in Sources */,
+				5E88CA6B22C46B9600219AC0 /* User.swift in Sources */,
 				5E2BA07522BCD15E0082C219 /* StoryCollectionViewCell.swift in Sources */,
 				5E2BA07122BCCE480082C219 /* TimeLineTableViewCell.swift in Sources */,
 				5E61B6B222C20D30003925B1 /* DetailTableViewController.swift in Sources */,
@@ -222,7 +232,7 @@
 				5E2BA05722BCCB790082C219 /* AppDelegate.swift in Sources */,
 				5E61B6AB22C2027C003925B1 /* SimpleCell.swift in Sources */,
 				5E2BA06D22BCCD3A0082C219 /* StoryTableViewCell.swift in Sources */,
-				5E61B6A422C1D694003925B1 /* ProfileCell.swift in Sources */,
+				5E88CA6D22C5B9C900219AC0 /* ProfileCell.swift in Sources */,
 				5E61B6A622C1F3BD003925B1 /* CollectionViewCell.swift in Sources */,
 				5E61B6A822C1F7D1003925B1 /* ButtonCell.swift in Sources */,
 			);

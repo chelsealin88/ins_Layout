@@ -10,13 +10,12 @@ import UIKit
 
 
 protocol TimeLineTableViewCellDelegate {
-    func passData()
+    func passData(indexPath: IndexPath)
 }
 
 
 class TimeLineTableViewCell: UITableViewCell {
-    
-    
+
    
     @IBOutlet weak var idLebel: UILabel!
     @IBOutlet weak var timelineidLabel: UILabel!
@@ -24,12 +23,14 @@ class TimeLineTableViewCell: UITableViewCell {
     @IBOutlet weak var postLabel: UILabel!
     @IBOutlet weak var avatar: UIImageView! {
         didSet {
+            avatar.layer.cornerRadius = 25
             avatar.clipsToBounds = true
             avatar.contentMode = .scaleAspectFill
         }
     }
     
     var delegate : TimeLineTableViewCellDelegate?
+    var indexPath : IndexPath?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,22 +44,35 @@ class TimeLineTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(false, animated: false)
-
-        // Configure the view for the selected state
+        
     }
 
-    // todo: label tap
+    // label tap
     @objc func passData(sender: UITapGestureRecognizer) {
-        delegate?.passData()
+        // todo: 判斷indexpath
+        guard let indexPath = indexPath else { return }
+        delegate?.passData(indexPath: indexPath)
     }
     
-    func updateCell(_ timeline: TimeLine) {
+    func updateCell(_ timeline: UserTimeline) {
         
-        timelineidLabel?.text = timeline.id
+//        if let timeline = timeline as? TimeLine {
+//            
+//        }
+        
+        /* todo: 用protocol的方式判斷 type
+        protocol { var xxx
+         }
+        */
+
+        timelineidLabel.text = timeline.id
         idLebel?.text = timeline.id
+        print("我是圖片", timeline.photo)
         postImage?.image = timeline.photo
         avatar?.image = timeline.avatar
         postLabel?.text = timeline.post
+
+        
     }
     
 }

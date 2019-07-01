@@ -21,12 +21,12 @@ class DetailCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func updateCell(_ timeline: TimeLine) {
-        avatar.image = timeline.avatar
-        idLabel.text = timeline.id
-        account.text = timeline.id
-        photo.image = timeline.photo
-        postLabel.text = timeline.post
+    func updateCell(_ user: UserTimeline) {
+        avatar.image = user.avatar
+        idLabel.text = user.id
+        account.text = user.id
+        photo.image = user.photo
+        postLabel.text = user.post
     }
 
 }
