@@ -8,7 +8,7 @@
 ![image](https://github.com/chelsealin88/ins_Layout/blob/master/Ins%20layout.jpg?raw=true)
 
 ### Demo
-![image](https://github.com/chelsealin88/ins_Layout/blob/master/ezgif.com-video-to-gif.gif?raw=true)
+![image](https://github.com/chelsealin88/ins_Layout/blob/master/ezgif.com-video-to-gif%20(1).gif?raw=true)
 
 
 
