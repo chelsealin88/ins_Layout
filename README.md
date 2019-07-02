@@ -1,6 +1,6 @@
 
 
-# Instagram Layout Challange 
+# Instagram Layout Clone
 
 ### 挑戰賽 Challenge 2 - Instagram
 
