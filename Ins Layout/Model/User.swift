@@ -37,8 +37,8 @@ struct UserTimeline {
             self.avatar = avatar
             self.photo = photo
         } else {
-            self.avatar = UIImage(named: "defualt")
-            self.photo = UIImage(named: "defualt")
+            self.avatar = UIImage(named: avatarName)
+            self.photo = UIImage(named: photoName)
         }
     }
     

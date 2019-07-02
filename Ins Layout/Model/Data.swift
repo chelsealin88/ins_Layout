@@ -37,9 +37,9 @@ class GetData {
         
         var users : [User] = []
         
-        let userid = ["TestA", "TestB", "TestC"]
+        let userid = ["EXO", "real_pcy", "TestA"]
         
-        let describe = ["hello world", "goooooooood"]
+        let describe = ["hello world", "goooooooood!!!!!", "🤟🤟🤟🤟", "EXO❤️"]
         
         let post = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet erat nisl. Maecenas in tempus elit.", "Donec pellentesque vel tellus non dapibus. Nulla convallis orci id mauris placerat sollicitudin. Vivamus luctus tempus metus ac convallis. ", "Donec hendrerit odio in eros cursus posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit.", "Donec ac finibus metus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur ac nisl et nunc pharetra faucibus eget non augue. Duis mollis malesuada mollis. "]
         
@@ -50,13 +50,17 @@ class GetData {
             let randonNumber = Int.random(in: 10...100)
             
             // fake timelines
+            // todo: 區分不同user的timeline
             var timelines = [UserTimeline]()
+            
             for num in 1...15 {
-                let timeline = UserTimeline(id: userid[randomID], avatarName: "image-\(num)", post: post[randomPost], photoName: "image-\(num)")
+                let timeline = UserTimeline(id: userid[randomID], avatarName: "avatar-\(num)", post: post[randomPost], photoName: "image-\(num)")
                 timelines.append(timeline)
             }
             
-            let user = User(avatar: "image-\(num)", id: userid[randomID], post: "\(randonNumber)k", followers: "\(randonNumber)M", following: "\(randonNumber)", descirbe: describe[randomDescribe], timeLine: timelines)
+            
+            let user = User(avatar: "avatar-\(num)", id: userid[randomID], post: "\(randonNumber)k", followers: "\(randonNumber)M", following: "\(randonNumber)", descirbe: describe[randomDescribe], timeLine: timelines)
+           
             users.append(user)
         }
         return users

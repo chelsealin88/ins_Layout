@@ -72,7 +72,7 @@ class ProfileCollectionViewController: UICollectionViewController, UICollectionV
             case .simple:
                 guard let simpleCell = cell as? SimpleCell else { return UICollectionViewCell()}
                 // todo : UIImage optional
-                simpleCell.updateCell(user.timeLine[indexPath.row].photo!)
+                simpleCell.updateCell(user.timeLine[indexPath.row].photo ?? UIImage())
                 return simpleCell
             default:
                 guard let detailCell = cell as? DetailCell else { return UICollectionViewCell()}

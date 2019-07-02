@@ -67,7 +67,6 @@ class TimeLineTableViewCell: UITableViewCell {
 
         timelineidLabel.text = timeline.id
         idLebel?.text = timeline.id
-        print("我是圖片", timeline.photo)
         postImage?.image = timeline.photo
         avatar?.image = timeline.avatar
         postLabel?.text = timeline.post

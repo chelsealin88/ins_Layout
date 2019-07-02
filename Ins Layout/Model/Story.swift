@@ -20,7 +20,7 @@ class Story {
         if let avatar = UIImage(named: avatarName) {
             self.avatar = avatar
         } else {
-            self.avatar = UIImage(named: "default")!
+            self.avatar = UIImage(named: "avatar-3")!
         }
     }
 
