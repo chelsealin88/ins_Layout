@@ -18,6 +18,12 @@ class ProfileCollectionViewController: UICollectionViewController, UICollectionV
         case detail = "DetailCell"
     }
     
+    enum Section: Int {
+        case profileCell = 0
+        case storyCell = 1
+        case buttonCell = 2
+    }
+    
     var stories = [Story]()
     var user : User?
     var celltype = InsCellType.simple
@@ -50,18 +56,18 @@ class ProfileCollectionViewController: UICollectionViewController, UICollectionV
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let user = user else { return UICollectionViewCell() }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: celltype.rawValue, for: indexPath)
-        // todo: enum 寫seciton
+        // todo: enum 寫seciton -> ok
         switch indexPath.section {
-        case 0:
+        case Section.profileCell.rawValue:
             let profileCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfileCell", for: indexPath) as! ProfileCell
             profileCell.updateCell(user)
             return profileCell
-        case 1:
+        case Section.storyCell.rawValue:
             let storyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
             storyCell.stories = self.stories
             return storyCell
             
-        case 2:
+        case Section.buttonCell.rawValue:
             let buttonCell = collectionView.dequeueReusableCell(withReuseIdentifier: "buttonCell", for: indexPath) as! ButtonCell
             buttonCell.delegate = self
             return buttonCell
